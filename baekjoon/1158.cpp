@@ -19,8 +19,11 @@ int main() {
 	while (p.size()) {
 		cout << *it;
 		it = p.erase(it);
-		for (int i = 1; i < k; i++) {
+		it--; // 21, 22를 합하면 it = --p.erase(it);이 됨.
+		for (int i = 0; i < k; i++) {
 			it++;
+			if (it == p.end()) //24, 25를 합하면 if (++it == p.end()) 가 됨
+				it = p.begin();
 		}
 		if (p.size()) cout << "\n";
 		else cout << ">\n";
