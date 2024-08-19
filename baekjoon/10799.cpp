@@ -16,9 +16,9 @@ int main() {
 		else {
 			pipe.pop();
 			if (str[i - 1] == '(')
-				ans++;
-			else
 				ans += pipe.size();
+			else
+				ans++;
 		}
 	}
 	cout << ans;
